@@ -37,7 +37,7 @@ client.connect(err => {
     })
 
 
-    app.get('/posts', (req, res) => {
+    app.get('/AllPosts', (req, res) => {
 
         postCollection.find({})
             .toArray((err, documents) => {
