@@ -27,6 +27,7 @@ client.connect(err => {
             })
     })
 
+
     app.get('/posts', (req, res) => {
 
         postCollection.find({title:{$regex:req.query.search}})
@@ -34,6 +35,16 @@ client.connect(err => {
                 res.send(documents)
             })
     })
+
+
+    app.get('/posts', (req, res) => {
+
+        postCollection.find({})
+            .toArray((err, documents) => {
+                res.send(documents)
+            })
+    })
+
 
     app.get('/post', (req, res) => {
         postCollection.find({ email: req.query.email })
